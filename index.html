@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="sl">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nežna podpora – Bachove esence & Schüsslerjeve soli</title>
+    <meta name="description" content="Bachove cvetne esence, Schüsslerjeve soli in nežna podpora za dobro počutje. Osebno svetovanje, izdelki in spremljanje." />
+  </head>
+
+  <body>
+    <!-- top scroll progress -->
+    <div class="scrollbar" aria-hidden="true">
+      <div class="scrollbar__bar" id="scrollbarBar"></div>
+    </div>
+
+    <header class="header" id="top">
+      <div class="container header__inner">
+        <a class="brand" href="#top" aria-label="Domov">
+          <span class="brand__mark" aria-hidden="true"></span>
+
+          <span class="brand__text">POLONCA</span>
+        </a>
+
+        <nav class="nav" aria-label="Glavna navigacija">
+          <a href="#storitve" class="nav__link">Storitve</a>
+          <a href="#o-nas" class="nav__link">O nas</a>
+          <a href="#kontakt" class="nav__link">Kontakt</a>
+          <a href="#rezervacija" class="nav__cta btn btn--pill btn--soft">Rezerviraj termin</a>
+        </nav>
+
+        <button class="burger" id="burgerBtn" aria-label="Odpri meni" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <div class="mobile" id="mobileMenu" hidden>
+        <div class="container mobile__inner">
+          <a href="#storitve" class="mobile__link">Storitve</a>
+          <a href="#o-nas" class="mobile__link">O nas</a>
+          <a href="#kontakt" class="mobile__link">Kontakt</a>
+          <a href="#rezervacija" class="btn btn--pill btn--primary mobile__cta">Rezerviraj termin</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero__bg" aria-hidden="true"></div>
+
+        <div class="container hero__grid">
+          <div class="hero__copy" data-reveal>
+            <p class="kicker">Nežna podpora za vsakdan</p>
+            <h1 class="hero__title">
+              Bachove cvetne esence, Schüsslerjeve soli in
+              <span class="underline">osebno svetovanje</span>.
+            </h1>
+            <p class="hero__lead">
+              Če si želiš več miru, jasnosti in stabilnosti – brez kompliciranja.
+              Skupaj izbereva pristop, ki je smiseln zate.
+            </p>
+
+            <div class="hero__actions">
+              <a class="btn btn--pill btn--primary" href="#rezervacija">Začni z mini posvetom</a>
+              <a class="btn btn--pill btn--ghost" href="#storitve">Poglej storitve</a>
+            </div>
+
+            <div class="trust" data-reveal>
+              <div class="trust__item">
+                <span class="trust__num">15–30 min</span>
+                <span class="trust__label">uvodni pogovor</span>
+              </div>
+              <div class="trust__item">
+                <span class="trust__num">Nežno</span>
+                <span class="trust__label">brez pritiska</span>
+              </div>
+              <div class="trust__item">
+                <span class="trust__num">Praktično</span>
+                <span class="trust__label">za vsakdan</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero visual -->
+          <div class="hero__visual" data-reveal>
+            <div class="card card--hero" id="heroCard">
+              <div class="card__top">
+                <span class="badge">Najbolj priljubljeno</span>
+                <span class="icon">🌼</span>
+              </div>
+
+              <div class="card__content">
+                <h3>“Umiri & zmehčaj tempo” paket</h3>
+                <p>
+                  Nežna kombinacija za stres, preobremenjenost in notranjo napetost.
+                </p>
+
+                <ul class="ticks">
+                  <li>kratka usmeritev + plan</li>
+                  <li>izbira esenc / soli</li>
+                  <li>spremljanje po 7 dneh</li>
+                </ul>
+
+                <div class="card__actions">
+                  <a class="btn btn--pill btn--primary" href="#rezervacija">Zanima me</a>
+                  <a class="btn btn--pill btn--soft" href="#faq">Vprašanja</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- floating pills (pure decorative) -->
+            <div class="float float--a" aria-hidden="true"></div>
+            <div class="float float--b" aria-hidden="true"></div>
+            <div class="float float--c" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <div class="container hero__marquee" aria-hidden="true">
+          <div class="marquee">
+            <div class="marquee__track">
+              <span>Bachove esence</span><span>•</span>
+              <span>Schüsslerjeve soli</span><span>•</span>
+              <span>Nežna rutina</span><span>•</span>
+              <span>Osebni pristop</span><span>•</span>
+              <span>Podpora za dobro počutje</span><span>•</span>
+              <span>Bachove esence</span><span>•</span>
+              <span>Schüsslerjeve soli</span><span>•</span>
+              <span>Nežna rutina</span><span>•</span>
+              <span>Osebni pristop</span><span>•</span>
+              <span>Podpora za dobro počutje</span><span>•</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section class="section" id="storitve">
+        <div class="container">
+          <div class="section__head" data-reveal>
+            <div>
+              <p class="kicker">Storitve</p>
+              <h2>Izberi tempo, ki ti ustreza</h2>
+            </div>
+            <p class="section__lead">
+              Tri pogoste poti. Vedno lahko kombinirava ali prilagodiva.
+            </p>
+          </div>
+
+          <div class="grid-3">
+            <a class="service service--link" href="/homeopatija.html" data-reveal>
+              <div class="service__top">
+                <span class="service__icon" aria-hidden="true"></span>
+                <h3>Homeopatija</h3>
+              </div>
+              <p>Osnovne informacije, pristop in pregled tem, ki jih pokrivava.</p>
+              <ul class="ticks ticks--muted">
+                <li>razumevanje pristopa</li>
+                <li>pogosta vprašanja</li>
+                <li>kako začeti</li>
+              </ul>
+              <span class="link">Odpri stran →</span>
+            </a>
+
+            <a class="service service--featured service--link" href="/bachove.html" data-reveal>
+              <div class="service__top">
+                <span class="service__icon service__icon--accent" aria-hidden="true"></span>
+                <h3>Bachove esence</h3>
+              </div>
+              <p>Pregled vseh 38 esenc. Hitro najdeš tisto, ki najbolj ustreza stanju.</p>
+              <ul class="ticks ticks--muted">
+                <li>38 esenc v preglednem sistemu</li>
+                <li>hover razširitev z opisom</li>
+                <li>iskanje po ključnih besedah (kasneje)</li>
+              </ul>
+              <span class="link">Odpri seznam →</span>
+            </a>
+
+            <a class="service service--link" href="/schussler.html" data-reveal>
+              <div class="service__top">
+                <span class="service__icon" aria-hidden="true"></span>
+                <h3>Schüsslerjeve soli</h3>
+              </div>
+              <p>Stran za opise posameznih soli. Vsaka sol ima svojo kartico/sekcijo.</p>
+              <ul class="ticks ticks--muted">
+                <li>vsaka sol posebej</li>
+                <li>pregledno in “mobile-first”</li>
+                <li>pripravljen prostor za tvoje tekste</li>
+              </ul>
+              <span class="link">Odpri stran →</span>
+            </a>
+          </div>
+
+
+          <!-- big feature row -->
+          <div class="feature" data-reveal>
+            <div class="feature__left">
+              <p class="kicker">Kako poteka</p>
+              <h3>Nežno, konkretno, izvedljivo</h3>
+              <p class="muted">
+                Najprej se uskladiva, kaj ti je pomembno. Nato izbereva pristop, ki ga lahko dejansko živiš.
+              </p>
+              <div class="steps">
+                <div class="step">
+                  <span class="step__dot" aria-hidden="true"></span>
+                  <div>
+                    <strong>1) Kratek pogovor</strong>
+                    <div class="muted">kaj se dogaja, kaj želiš, kaj je realno</div>
+                  </div>
+                </div>
+                <div class="step">
+                  <span class="step__dot" aria-hidden="true"></span>
+                  <div>
+                    <strong>2) Predlog izbire</strong>
+                    <div class="muted">esence / soli + enostavna navodila</div>
+                  </div>
+                </div>
+                <div class="step">
+                  <span class="step__dot" aria-hidden="true"></span>
+                  <div>
+                    <strong>3) Check-in</strong>
+                    <div class="muted">po potrebi prilagodiva in poenostaviva</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature__right">
+              <div class="mini-grid">
+                <div class="mini" data-tilt>
+                  <div class="mini__icon">☀️</div>
+                  <div class="mini__title">Jutranja rutina</div>
+                  <div class="mini__text">2–3 minute, preprosto.</div>
+                </div>
+                <div class="mini" data-tilt>
+                  <div class="mini__icon">🫖</div>
+                  <div class="mini__title">Podpora čez dan</div>
+                  <div class="mini__text">nežno, brez “overthinking”.</div>
+                </div>
+                <div class="mini" data-tilt>
+                  <div class="mini__icon">🌙</div>
+                  <div class="mini__title">Več miru zvečer</div>
+                  <div class="mini__text">ritual za umiritev.</div>
+                </div>
+                <div class="mini" data-tilt>
+                  <div class="mini__icon">📌</div>
+                  <div class="mini__title">Kratka navodila</div>
+                  <div class="mini__text">da ostane jasno.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section section--soft" id="o-nas">
+        <div class="container">
+          <div class="about">
+            <div class="about__img" data-reveal>
+              <div class="photo">
+                <div class="photo__shine" aria-hidden="true"></div>
+                <div class="photo__label">
+                  <span class="badge badge--soft">O meni</span>
+                  <span class="muted">nežno + praktično</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="about__copy" data-reveal>
+              <p class="kicker">O nas</p>
+              <h2>Majhno podjetje, oseben pristop</h2>
+              <p class="muted">
+                Fokus je na tem, da dobiš občutek varnosti in jasen plan. Brez “popolnih rutin” in brez pritiska.
+                V ospredju je vsakdan: spanje, stres, preobremenjenost, notranja napetost, negotovost.
+              </p>
+
+              <div class="facts">
+                <div class="fact">
+                  <div class="fact__num">1</div>
+                  <div class="fact__text">oseba, ki te spremlja od začetka do konca</div>
+                </div>
+                <div class="fact">
+                  <div class="fact__num">7</div>
+                  <div class="fact__text">dni do prvega check-ina (po želji)</div>
+                </div>
+                <div class="fact">
+                  <div class="fact__num">3</div>
+                  <div class="fact__text">glavni paketi, vse ostalo prilagodljivo</div>
+                </div>
+              </div>
+
+              <div class="quote">
+                <p>“Najboljše je, ko je plan dovolj majhen, da ga res narediš.”</p>
+                <span class="muted">— pristop, ki ostane v praksi</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section class="section" id="mnenja">
+        <div class="container">
+          <div class="section__head" data-reveal>
+            <div>
+              <p class="kicker">Mnenja</p>
+              <h2>Čisto normalne stvari, ki pomagajo</h2>
+            </div>
+            <p class="section__lead">Besedilo je placeholder — zamenjaš s pravimi mnenji.</p>
+          </div>
+
+          <div class="grid-3">
+            <article class="testimonial" data-reveal>
+              <p>“Končno imam rutino, ki ni stresna. Majhne spremembe, velik učinek.”</p>
+              <div class="testimonial__meta">
+                <span class="avatar" aria-hidden="true"></span>
+                <div>
+                  <strong>Tina</strong>
+                  <div class="muted">posvet + esence</div>
+                </div>
+              </div>
+            </article>
+
+            <article class="testimonial" data-reveal>
+              <p>“Zelo všeč mi je, da je bilo vse razloženo enostavno in brez kompliciranja.”</p>
+              <div class="testimonial__meta">
+                <span class="avatar" aria-hidden="true"></span>
+                <div>
+                  <strong>Matej</strong>
+                  <div class="muted">Schüssler plan</div>
+                </div>
+              </div>
+            </article>
+
+            <article class="testimonial" data-reveal>
+              <p>“Najbolj mi je pomagalo spremljanje po enem tednu. Tam se je vse ‘usedlo’.”</p>
+              <div class="testimonial__meta">
+                <span class="avatar" aria-hidden="true"></span>
+                <div>
+                  <strong>Nika</strong>
+                  <div class="muted">paket + check-in</div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section section--soft" id="faq">
+        <div class="container">
+          <div class="section__head" data-reveal>
+            <div>
+              <p class="kicker">FAQ</p>
+              <h2>Najpogostejša vprašanja</h2>
+            </div>
+            <p class="section__lead">Klikni za razlago. Animacija je namerno nežna.</p>
+          </div>
+
+          <div class="faq" data-reveal>
+            <details class="faq__item">
+              <summary>Kako hitro se dogovoriva za termin?</summary>
+              <div class="faq__content muted">
+                Običajno v parih dneh. Če je nujno, napiši v kontakt in dodaj “NUJNO”.
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary>Ali moram vse vedeti vnaprej?</summary>
+              <div class="faq__content muted">
+                Ne. Dovolj je, da poveš, kaj doživljaš in kaj želiš. Ostalo sestaviva skupaj.
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary>Ali je plan zapleten?</summary>
+              <div class="faq__content muted">
+                Ne. Cilj je minimalen plan, ki ga res narediš. Če je preveč, poenostaviva.
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT / BOOKING -->
+      <section class="section" id="kontakt">
+        <div class="container">
+          <div class="cta" data-reveal>
+            <div class="cta__copy">
+              <p class="kicker">Kontakt</p>
+              <h2>Piši, če želiš predlog ali vprašanje</h2>
+              <p class="muted">
+                Najhitreje: kratko opiši situacijo in napiši, ali želiš esence, soli ali samo usmeritev.
+              </p>
+
+              <div class="contact-cards">
+                <div class="contact-card" data-tilt>
+                  <div class="contact-card__icon">✉️</div>
+                  <div>
+                    <strong>E-pošta</strong>
+                    <div class="muted">info@primer.si</div>
+                  </div>
+                </div>
+                <div class="contact-card" data-tilt>
+                  <div class="contact-card__icon">☎️</div>
+                  <div>
+                    <strong>Telefon</strong>
+                    <div class="muted">+386 40 000 000</div>
+                  </div>
+                </div>
+                <div class="contact-card" data-tilt>
+                  <div class="contact-card__icon">📍</div>
+                  <div>
+                    <strong>Lokacija</strong>
+                    <div class="muted">Ptuj (po dogovoru)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="cta__form" id="rezervacija" data-reveal>
+              <form class="form" autocomplete="on">
+                <div class="form__row">
+                  <label>
+                    Ime
+                    <input type="text" placeholder="Npr. Ana" required />
+                  </label>
+                  <label>
+                    E-pošta
+                    <input type="email" placeholder="ana@..." required />
+                  </label>
+                </div>
+
+                <label>
+                  Kaj te najbolj zanima?
+                  <select required>
+                    <option value="" selected disabled>Izberi</option>
+                    <option>Mini posvet</option>
+                    <option>Osebna izbira esenc</option>
+                    <option>Schüsslerjeve soli plan</option>
+                    <option>Najprej imam vprašanje</option>
+                  </select>
+                </label>
+
+                <label>
+                  Sporočilo
+                  <textarea rows="4" placeholder="Kratek opis situacije..."></textarea>
+                </label>
+
+                <div class="form__actions">
+                  <button class="btn btn--pill btn--primary" type="submit">Pošlji</button>
+                  <span class="muted small">To je demo forma (brez backend pošiljanja).</span>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="container footer__inner">
+          <div class="footer__left">
+            <div class="brand brand--footer">
+              <span class="brand__mark" aria-hidden="true"></span>
+
+              <span class="brand__text">POLONCA</span>
+            </div>
+            <p class="muted small">
+              © <span id="year"></span> • Nežna podpora za vsakdan
+            </p>
+          </div>
+
+          <div class="footer__right">
+            <a class="footer__link" href="#storitve">Storitve</a>
+            <a class="footer__link" href="#o-nas">O nas</a>
+            <a class="footer__link" href="#kontakt">Kontakt</a>
+            <a class="footer__link" href="#top">Na vrh ↑</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

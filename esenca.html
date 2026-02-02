@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bachova esenca</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="/bachove.html">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__text">Nazaj</span>
+      </a>
+      <nav class="nav">
+        <a href="/index.html#storitve" class="nav__link">Storitve</a>
+        <a href="/index.html#kontakt" class="nav__link">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <article class="essence" data-reveal>
+        <div class="essence__hero">
+          <div class="essence__img" id="essenceImg" aria-hidden="true"></div>
+          <div>
+            <p class="kicker">Bachova esenca</p>
+            <h1 class="essence__title" id="essenceTitle">—</h1>
+            <p class="muted" id="essenceLead">—</p>
+            <div class="essence__chips" id="essenceChips"></div>
+          </div>
+        </div>
+
+        <div class="essence__grid">
+          <section class="essence__card">
+            <h3>Ko pride prav</h3>
+            <p class="muted" id="essenceWhen">—</p>
+          </section>
+
+          <section class="essence__card">
+            <h3>Kaj je cilj</h3>
+            <p class="muted" id="essenceGoal">—</p>
+          </section>
+
+          <section class="essence__card essence__card--wide">
+            <h3>Podrobnejši opis</h3>
+            <div class="muted" id="essenceBody">—</div>
+          </section>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <script type="module" src="/src/pages/esenca.js"></script>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
