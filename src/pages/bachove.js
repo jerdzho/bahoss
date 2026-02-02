@@ -46,7 +46,7 @@ const grid = document.getElementById("bachGrid");
 grid.innerHTML = BACH.map((x) => {
   const slug = x.name.toLowerCase().replace(/\s+/g, "-");
   return `
-    <a class="bach-card" href="/esenca.html?e=${slug}" aria-label="${x.name}">
+    <a class="bach-card" href="./esenca.html?e=${slug}" aria-label="${x.name}">
         <div class="bach-card__inner">
         <div class="bach-card__img" aria-hidden="true"></div>
         <div class="bach-card__body">
