@@ -8,12 +8,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/src/style.css" />
+  
+
 </head>
 <body>
+  
   <header class="header">
     <div class="container header__inner">
       <a class="brand" href="./index.html#storitve">
-        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__mark" aria-hidden="true">
+          <img class="brand__logo" src="./img/logo.svg" alt="">
+        </span>
         <span class="brand__text">Nazaj</span>
       </a>
       <nav class="nav">
@@ -33,30 +38,65 @@
         </div>
         <p class="section__lead">Tu dodaš svoj tekst in strukturo (sekcije, FAQ, itd.).</p>
       </div>
+      <div class="page-hero" data-reveal>
+        <div class="page-hero__media" aria-label="Prostor za sliko"></div>
+        <div class="page-hero__copy">
+          <h3>Kratek uvod (placeholder)</h3>
+          <p class="muted">
+            Tukaj bo kratek opis, komu je namenjeno in kaj lahko pričakuješ. Kasneje zamenjaš z real tekstom.
+          </p>
+        </div>
+      </div>
+
 
       <div class="feature" data-reveal>
         <div>
           <h3>Struktura strani (predlog)</h3>
           <p class="muted">Kaj je, kako poteka, komu je namenjeno, pogosta vprašanja, kontakt.</p>
         </div>
-        <div class="mini-grid">
-          <div class="mini" data-tilt>
-            <div class="mini__title">Kaj je</div>
-            <div class="mini__text">kratka razlaga, jedrnato.</div>
-          </div>
-          <div class="mini" data-tilt>
-            <div class="mini__title">Kako poteka</div>
-            <div class="mini__text">koraki in pričakovanja.</div>
-          </div>
-          <div class="mini" data-tilt>
-            <div class="mini__title">FAQ</div>
-            <div class="mini__text">najpogostejša vprašanja.</div>
-          </div>
-          <div class="mini" data-tilt>
-            <div class="mini__title">Kontakt</div>
-            <div class="mini__text">povezava do termina.</div>
-          </div>
-        </div>
+        <section class="content-block" data-reveal id="kaj-je">
+  <h3>Kaj je</h3>
+  <p class="muted">
+    Placeholder tekst: kratek opis koncepta, kako ga uporabljaš v praksi, kaj je cilj srečanja.
+  </p>
+  <ul class="ticks ticks--muted">
+    <li>začetna usmeritev (kaj je relevantno zate)</li>
+    <li>individualen pristop</li>
+    <li>jasna naslednja poteza</li>
+  </ul>
+</section>
+
+<section class="content-block" data-reveal id="kako-poteca">
+  <h3>Kako poteka</h3>
+  <ol class="steps-list">
+    <li><strong>Uvod</strong> – kratko zberemo informacije in cilj.</li>
+    <li><strong>Predlog</strong> – predstavi se plan (placeholder).</li>
+    <li><strong>Dogovor</strong> – kaj narediš do naslednjič.</li>
+  </ol>
+</section>
+
+<section class="content-block" data-reveal id="faq-homeo">
+  <h3>FAQ</h3>
+  <div class="faq">
+    <details class="faq__item">
+      <summary>Koliko časa traja posvet?</summary>
+      <div class="faq__content muted">Placeholder odgovor.</div>
+    </details>
+    <details class="faq__item">
+      <summary>Ali je primerno za vsakogar?</summary>
+      <div class="faq__content muted">Placeholder odgovor.</div>
+    </details>
+  </div>
+</section>
+
+<section class="content-block" data-reveal id="kontakt-homeo">
+  <h3>Kontakt</h3>
+  <p class="muted">
+    Za termin ali vprašanje uporabi kontaktni obrazec na začetni strani.
+  </p>
+  <a class="btn btn--pill btn--primary" href="./index.html#rezervacija">Odpri kontaktni obrazec</a>
+</section>
+
       </div>
     </div>
   </main>

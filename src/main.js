@@ -37,17 +37,24 @@ document.addEventListener("click", (e) => {
   const id = a.getAttribute("href");
   if (!id || id === "#") return;
 
+  // special-case: go truly to the page top
+  if (id === "#top") {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    closeMobile();
+    return;
+  }
+
   const target = document.querySelector(id);
   if (!target) return;
 
   e.preventDefault();
   const top = window.scrollY + target.getBoundingClientRect().top - (headerH() + 10);
+  window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
 
-  window.scrollTo({ top, behavior: "smooth" });
-
-  // close mobile menu if open
   closeMobile();
 });
+
 
 /**
  * Mobile menu

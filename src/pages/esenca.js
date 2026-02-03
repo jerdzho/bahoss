@@ -56,3 +56,9 @@ chips.innerHTML = (item.tags || [])
 
 // optional: kasneje zamenjaš z real image <img>
 document.getElementById("essenceImg").setAttribute("data-slug", item.slug);
+
+
+//Nastavim ozadje
+document.getElementById("essenceImg").style.backgroundImage = `url('./img/bach/${item.slug}.jpg')`;
+document.getElementById("essenceImg").style.backgroundSize = "cover";
+document.getElementById("essenceImg").style.backgroundPosition = "center";

@@ -20,9 +20,12 @@
     <header class="header" id="top">
       <div class="container header__inner">
         <a class="brand" href="#top" aria-label="Domov">
-          <span class="brand__mark" aria-hidden="true"></span>
+          <span class="brand__mark" aria-hidden="true">
+            <img class="brand__logo" src="./img/logo.svg" alt="">
+          </span>
 
-          <span class="brand__text">POLONCA</span>
+
+          <span class="brand__text">BAHOSS</span>
         </a>
 
         <nav class="nav" aria-label="Glavna navigacija">
@@ -52,11 +55,11 @@
       <section class="hero">
         <div class="hero__bg" aria-hidden="true"></div>
 
-        <div class="container hero__grid">
+        <div class="container hero__grid hero__grid--single">
           <div class="hero__copy" data-reveal>
             <p class="kicker">Nežna podpora za vsakdan</p>
             <h1 class="hero__title">
-              Bachove cvetne esence, Schüsslerjeve soli in
+              Homeopatija, Bachove cvetne esence, Schüsslerjeve soli in
               <span class="underline">osebno svetovanje</span>.
             </h1>
             <p class="hero__lead">
@@ -64,53 +67,20 @@
               Skupaj izbereva pristop, ki je smiseln zate.
             </p>
 
-            <div class="hero__actions">
+            <div class="hero__actions hero__actions--inline">
               <a class="btn btn--pill btn--primary" href="#rezervacija">Začni z mini posvetom</a>
               <a class="btn btn--pill btn--ghost" href="#storitve">Poglej storitve</a>
-            </div>
 
-            <div class="trust" data-reveal>
-              <div class="trust__item">
+              <div class="trust__item trust__item--inline">
                 <span class="trust__num">15–30 min</span>
                 <span class="trust__label">uvodni pogovor</span>
               </div>
-              <div class="trust__item">
-                <span class="trust__num">Nežno</span>
-                <span class="trust__label">brez pritiska</span>
-              </div>
-              <div class="trust__item">
-                <span class="trust__num">Praktično</span>
-                <span class="trust__label">za vsakdan</span>
-              </div>
             </div>
-          </div>
 
-          <!-- Hero visual -->
-          <div class="hero__visual" data-reveal>
-            <div class="card card--hero" id="heroCard">
-              <div class="card__top">
-                <span class="badge">Najbolj priljubljeno</span>
-                <span class="icon">🌼</span>
-              </div>
 
-              <div class="card__content">
-                <h3>“Umiri & zmehčaj tempo” paket</h3>
-                <p>
-                  Nežna kombinacija za stres, preobremenjenost in notranjo napetost.
-                </p>
+            
 
-                <ul class="ticks">
-                  <li>kratka usmeritev + plan</li>
-                  <li>izbira esenc / soli</li>
-                  <li>spremljanje po 7 dneh</li>
-                </ul>
-
-                <div class="card__actions">
-                  <a class="btn btn--pill btn--primary" href="#rezervacija">Zanima me</a>
-                  <a class="btn btn--pill btn--soft" href="#faq">Vprašanja</a>
-                </div>
-              </div>
-            </div>
+          
 
             <!-- floating pills (pure decorative) -->
             <div class="float float--a" aria-hidden="true"></div>
@@ -138,7 +108,8 @@
       </section>
 
       <!-- SERVICES -->
-      <section class="section" id="storitve">
+      <section class="section section--tight-top" id="storitve">
+
         <div class="container">
           <div class="section__head" data-reveal>
             <div>
@@ -229,39 +200,22 @@
             </div>
 
             <div class="feature__right">
-              <div class="mini-grid">
-                <div class="mini" data-tilt>
-                  <div class="mini__icon">☀️</div>
-                  <div class="mini__title">Jutranja rutina</div>
-                  <div class="mini__text">2–3 minute, preprosto.</div>
-                </div>
-                <div class="mini" data-tilt>
-                  <div class="mini__icon">🫖</div>
-                  <div class="mini__title">Podpora čez dan</div>
-                  <div class="mini__text">nežno, brez “overthinking”.</div>
-                </div>
-                <div class="mini" data-tilt>
-                  <div class="mini__icon">🌙</div>
-                  <div class="mini__title">Več miru zvečer</div>
-                  <div class="mini__text">ritual za umiritev.</div>
-                </div>
-                <div class="mini" data-tilt>
-                  <div class="mini__icon">📌</div>
-                  <div class="mini__title">Kratka navodila</div>
-                  <div class="mini__text">da ostane jasno.</div>
-                </div>
-              </div>
+              <div class="media-box" aria-label="Prostor za sliko"></div>
+              <p class="muted small" style="margin:10px 0 0;">
+                (placeholder) Sem lahko dodaš fotografijo ali ilustracijo.
+              </p>
             </div>
+
           </div>
         </div>
       </section>
 
       <!-- ABOUT -->
-      <section class="section section--soft" id="o-nas">
+      <section class="section section--soft section--tight" id="o-nas">
         <div class="container">
           <div class="about">
             <div class="about__img" data-reveal>
-              <div class="photo">
+              <div class="photo photo--me">
                 <div class="photo__shine" aria-hidden="true"></div>
                 <div class="photo__label">
                   <span class="badge badge--soft">O meni</span>
@@ -303,7 +257,7 @@
       </section>
 
       <!-- TESTIMONIALS -->
-      <section class="section" id="mnenja">
+      <section class="section section--tight" id="mnenja">
         <div class="container">
           <div class="section__head" data-reveal>
             <div>
@@ -351,7 +305,7 @@
       </section>
 
       <!-- FAQ -->
-      <section class="section section--soft" id="faq">
+      <section class="section section--soft section--tight" id="faq">
         <div class="container">
           <div class="section__head" data-reveal>
             <div>
@@ -387,7 +341,7 @@
       </section>
 
       <!-- CONTACT / BOOKING -->
-      <section class="section" id="kontakt">
+      <section class="section section--tight" id="kontakt">
         <div class="container">
           <div class="cta" data-reveal>
             <div class="cta__copy">
@@ -466,9 +420,12 @@
         <div class="container footer__inner">
           <div class="footer__left">
             <div class="brand brand--footer">
-              <span class="brand__mark" aria-hidden="true"></span>
+              <span class="brand__mark" aria-hidden="true">
+                <img class="brand__logo" src="./img/logo.svg" alt="">
+              </span>
 
-              <span class="brand__text">POLONCA</span>
+
+              <span class="brand__text">BAHOSS</span>
             </div>
             <p class="muted small">
               © <span id="year"></span> • Nežna podpora za vsakdan

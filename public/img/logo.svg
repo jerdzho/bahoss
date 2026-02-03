@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Bahoss ikon">
+  <g fill="none" stroke="#2F5D46" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+    <!-- kapljica -->
+    <path d="M32 10 C25 19, 20 26, 20 34 C20 43, 25 50, 32 52 C39 50, 44 43, 44 34 C44 26, 39 19, 32 10 Z"></path>
+    <!-- list levo -->
+    <path d="M18 38 C15 45, 19 52, 28 52 C24 46, 21 41, 18 38 Z"></path>
+    <!-- list desno -->
+    <path d="M46 38 C49 45, 45 52, 36 52 C40 46, 43 41, 46 38 Z"></path>
+    <!-- spodnja linija -->
+    <path d="M22 54 C27 57, 37 57, 42 54"></path>
+  </g>
+</svg>
