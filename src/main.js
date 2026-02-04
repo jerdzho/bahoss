@@ -45,6 +45,7 @@ document.addEventListener("click", (e) => {
     return;
   }
 
+
   const target = document.querySelector(id);
   if (!target) return;
 
@@ -100,8 +101,8 @@ function updateScrollBar() {
   const p = h <= 0 ? 0 : (window.scrollY / h) * 100;
   bar.style.width = `${Math.min(100, Math.max(0, p))}%`;
 }
-window.addEventListener("scroll", updateScrollBar, { passive: true });
-updateScrollBar();
+//window.addEventListener("scroll", updateScrollBar, { passive: true });
+//updateScrollBar();
 
 /**
  * Gentle parallax in hero
@@ -110,14 +111,31 @@ const heroCard = document.getElementById("heroCard");
 const floats = Array.from(document.querySelectorAll(".float"));
 function updateParallax() {
   const y = window.scrollY;
-  if (heroCard) heroCard.style.transform = `translateY(${Math.min(18, y * 0.03)}px)`;
-  floats.forEach((el, i) => {
-    const k = 0.06 + i * 0.015;
-    el.style.transform = `translateY(${Math.min(28, y * k)}px)`;
+  if (heroCard) heroCard.style.transform = `translate3d(0, ${Math.min(18, y * 0.03)}px, 0)`;
+
+}
+//window.addEventListener("scroll", updateParallax, { passive: true });
+updateParallax();
+
+/**
+ * Combined scroll handler (throttled via rAF)
+ */
+let ticking = false;
+
+function onScroll() {
+  if (ticking) return;
+  ticking = true;
+
+  requestAnimationFrame(() => {
+   // updateScrollBar();
+    updateParallax();
+    ticking = false;
   });
 }
-window.addEventListener("scroll", updateParallax, { passive: true });
-updateParallax();
+
+window.addEventListener("scroll", onScroll, { passive: true });
+onScroll(); // initial paint
+
 
 /**
  * Subtle tilt on hover for elements with [data-tilt]

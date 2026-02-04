@@ -58,7 +58,8 @@ chips.innerHTML = (item.tags || [])
 document.getElementById("essenceImg").setAttribute("data-slug", item.slug);
 
 
-//Nastavim ozadje
-document.getElementById("essenceImg").style.backgroundImage = `url('./img/bach/${item.slug}.jpg')`;
+const BASE = import.meta.env.BASE_URL;
+document.getElementById("essenceImg").style.backgroundImage = `url('${BASE}img/bach/${item.slug}.jpg')`;
 document.getElementById("essenceImg").style.backgroundSize = "cover";
 document.getElementById("essenceImg").style.backgroundPosition = "center";
+

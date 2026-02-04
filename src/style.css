@@ -28,7 +28,6 @@
 *::before,
 *::after{ box-sizing: border-box; }
 
-html{ scroll-behavior: smooth; }
 body{
   margin:0;
   font-family: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, "Apple Color Emoji","Segoe UI Emoji";
@@ -846,19 +845,6 @@ input:focus, select:focus, textarea:focus{
   .burger{ display:block; }
 }
 
-[data-reveal]{
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity .8s var(--ease), transform .8s var(--ease);
-  will-change: opacity, transform;
-}
-.is-visible{
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
-
 /* CSS za Bach grid --> bachove.html */
 .bach-grid{
   display:grid;
@@ -911,13 +897,7 @@ input:focus, select:focus, textarea:focus{
 }
 
 /* slika */
-.bach-card__img{
-  height: 96px;
-  background-size: cover ;
-  background-position: center;
-  border-bottom: 1px solid rgba(31,42,34,.08);
-  
-}
+
 
 
 /* body */
@@ -993,13 +973,76 @@ input:focus, select:focus, textarea:focus{
   transform: translateX(-50%) rotate(45deg);
 }
 
-@media (max-width: 980px){
-  .bach-grid{ grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 520px){
-  .bach-grid{ grid-template-columns: 1fr; }
-}
+
 /*------------------------------------------------------*/
+/* ===== DESKTOP: clamp tooltip v viewport z "poravnavo po stolpcih" ===== */
+@media (min-width: 981px){
+  /* privzeto (sredina) ostane kot imaš: left:50% + translateX(-50%) */
+
+  /* 1. stolpec (1,5,9,...) -> poravnaj levo v kartico */
+  .bach-card:nth-child(4n + 1) .bach-card__desc{
+    left: 0;
+    transform: translateY(10px);
+  }
+  .bach-card:nth-child(4n + 1):hover .bach-card__desc,
+  .bach-card:nth-child(4n + 1):focus-visible .bach-card__desc{
+    transform: translateY(0);
+  }
+  .bach-card:nth-child(4n + 1) .bach-card__desc::before{
+    left: 28px;
+    transform: rotate(45deg);
+  }
+
+  /* 4. stolpec (4,8,12,...) -> poravnaj desno v kartico */
+  .bach-card:nth-child(4n) .bach-card__desc{
+    left: auto;
+    right: 0;
+    transform: translateY(10px);
+  }
+  .bach-card:nth-child(4n):hover .bach-card__desc,
+  .bach-card:nth-child(4n):focus-visible .bach-card__desc{
+    transform: translateY(0);
+  }
+  .bach-card:nth-child(4n) .bach-card__desc::before{
+    left: auto;
+    right: 28px;
+    transform: rotate(45deg);
+  }
+}
+
+/* ===== TABLET (2 stolpca): enako pravilo za 2-col grid ===== */
+@media (max-width: 980px){
+  /* pri tebi je grid 2 stolpca, zato uporabimo 2n */
+  .bach-card:nth-child(2n + 1) .bach-card__desc{
+    left: 0;
+    transform: translateY(10px);
+  }
+  .bach-card:nth-child(2n + 1):hover .bach-card__desc,
+  .bach-card:nth-child(2n + 1):focus-visible .bach-card__desc{
+    transform: translateY(0);
+  }
+  .bach-card:nth-child(2n + 1) .bach-card__desc::before{
+    left: 28px;
+    transform: rotate(45deg);
+  }
+
+  .bach-card:nth-child(2n) .bach-card__desc{
+    left: auto;
+    right: 0;
+    transform: translateY(10px);
+  }
+  .bach-card:nth-child(2n):hover .bach-card__desc,
+  .bach-card:nth-child(2n):focus-visible .bach-card__desc{
+    transform: translateY(0);
+  }
+  .bach-card:nth-child(2n) .bach-card__desc::before{
+    left: auto;
+    right: 28px;
+    transform: rotate(45deg);
+  }
+}
+
+/*----------------------------------------------------------------*/
 
 
 
@@ -1071,7 +1114,7 @@ input:focus, select:focus, textarea:focus{
   box-shadow: var(--shadow);
 
   background-image:
-    url("/img/kakopoteka.jpg"),
+    url("./img/kakopoteka.jpg"),
     radial-gradient(220px 180px at 25% 30%, rgba(215,184,106,.45), transparent 60%),
     radial-gradient(260px 220px at 70% 75%, rgba(47,107,78,.18), transparent 60%),
     linear-gradient(135deg, rgba(255,255,255,.85), rgba(243,245,234,.85));
@@ -1108,7 +1151,7 @@ input:focus, select:focus, textarea:focus{
   box-shadow: var(--shadow);
 
   background-image:
-    url("/img/homeopatija.jpg"),
+    url("./img/homeopatija.jpg"),
     radial-gradient(180px 140px at 25% 30%, rgba(215,184,106,.45), transparent 60%),
     radial-gradient(220px 180px at 70% 75%, rgba(47,107,78,.18), transparent 60%),
     linear-gradient(135deg, rgba(255,255,255,.85), rgba(243,245,234,.85));
@@ -1152,15 +1195,26 @@ input:focus, select:focus, textarea:focus{
 }
 
 .salt-card__media{
-  height: 140px;
-  background:
-    radial-gradient(120px 90px at 30% 35%, rgba(215,184,106,.45), transparent 60%),
-    radial-gradient(140px 110px at 70% 75%, rgba(47,107,78,.18), transparent 60%),
-    linear-gradient(135deg, rgba(255,255,255,.85), rgba(243,245,234,.85));
-  background-size: cover;
+  height: 180px;
+  border-bottom: 1px solid rgba(31,42,34,.08);
+  background-image:
+    radial-gradient(120px 90px at 30% 35%, rgba(215,184,106,.35), transparent 60%),
+    radial-gradient(160px 120px at 70% 75%, rgba(47,107,78,.18), transparent 60%),
+    linear-gradient(135deg, rgba(255,255,255,.9), rgba(243,245,234,.9));
+  background-repeat: no-repeat;
   background-position: center;
+  background-size: auto;
+}
+.bach-card__img{
+  height: 84px;                 /* ali več, npr 110px */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;       /* to naredi “čez celotno kartico” */
   border-bottom: 1px solid rgba(31,42,34,.08);
 }
+
+
+
 
 .salt-card__body{
   padding: 14px 14px 16px;
@@ -1196,5 +1250,15 @@ input:focus, select:focus, textarea:focus{
   .section--tight{
     padding-top: 34px;
     padding-bottom: 34px;
+  }
+}
+#heroCard{ will-change: transform; }
+.float{ will-change: transform; }
+
+/* Firefox (Linux) performance: disable backdrop-filter */
+@-moz-document url-prefix() {
+  .header{
+    backdrop-filter: none;
+    background: rgba(251,250,246,.92);
   }
 }

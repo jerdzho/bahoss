@@ -1,5 +1,11 @@
 import "../style.css";
 
+const esc = (s) => String(s)
+  .replaceAll("&", "&amp;")
+  .replaceAll("<", "&lt;")
+  .replaceAll(">", "&gt;")
+  .replaceAll('"', "&quot;");
+
 const BACH = [
   { name: "Agrimony", desc: "Za tiste, ki navzven delujejo brez skrbi, znotraj pa nosijo napetost." },
   { name: "Aspen", desc: "Za nejasne strahove in občutek nelagodja brez jasnega razloga." },
@@ -42,21 +48,26 @@ const BACH = [
 ];
 
 const grid = document.getElementById("bachGrid");
+if (!grid) throw new Error("#bachGrid not found");
+
+const BASE = import.meta.env.BASE_URL;
 
 grid.innerHTML = BACH.map((x) => {
   const slug = x.name.toLowerCase().replace(/\s+/g, "-");
-  const img = `./img/bach/${slug}.jpg`;
+  const imgUrl = `${BASE}img/bach/${slug}.jpg`;
 
   return `
-    <a class="bach-card" href="./esenca.html?e=${slug}" aria-label="${x.name}">
+    <a class="bach-card" href="./esenca.html?e=${slug}" aria-label="${esc(x.name)}">
       <div class="bach-card__inner">
-        <div class="bach-card__img" aria-hidden="true" style="background-image:url('${img}')"></div>
+        <div class="bach-card__img" style="background-image:url('${imgUrl}')" aria-hidden="true"></div>
         <div class="bach-card__body">
-          <h3 class="bach-card__title">${x.name}</h3>
+          <h3 class="bach-card__title">${esc(x.name)}</h3>
         </div>
       </div>
-      <p class="bach-card__desc">${x.desc}</p>
+      <p class="bach-card__desc">${esc(x.desc)}</p>
     </a>
   `;
 }).join("");
+
+
 
