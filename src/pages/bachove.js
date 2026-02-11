@@ -71,3 +71,58 @@ grid.innerHTML = BACH.map((x) => {
 
 
 
+function clampTooltip(card) {
+  const desc = card.querySelector(".bach-card__desc");
+  if (!desc) return;
+
+  // reset shift
+  card.style.setProperty("--shift", "0px");
+
+  // na hitro izmeri brez flasha
+  const prevVis = desc.style.visibility;
+  const prevOp = desc.style.opacity;
+  const prevPe = desc.style.pointerEvents;
+
+  desc.style.visibility = "hidden";
+  desc.style.opacity = "1";
+  desc.style.pointerEvents = "none";
+
+  const pad = 12;
+  const r = desc.getBoundingClientRect();
+
+  const overflowLeft = pad - r.left;
+  const overflowRight = r.right - (window.innerWidth - pad);
+
+  let shift = 0;
+  if (overflowLeft > 0) shift = overflowLeft;
+  else if (overflowRight > 0) shift = -overflowRight;
+
+  card.style.setProperty("--shift", `${Math.round(shift)}px`);
+
+  desc.style.visibility = prevVis;
+  desc.style.opacity = prevOp;
+  desc.style.pointerEvents = prevPe;
+}
+
+function clearShift(card) {
+  card.style.setProperty("--shift", "0px");
+}
+
+document.querySelectorAll(".bach-card").forEach((card) => {
+  const onEnter = () => clampTooltip(card);
+  const onLeave = () => clearShift(card);
+
+  card.addEventListener("mouseenter", onEnter);
+  card.addEventListener("focusin", onEnter);
+
+  card.addEventListener("mouseleave", onLeave);
+  card.addEventListener("focusout", onLeave);
+});
+
+// pri resize-u ponovno izračunaj za trenutno hovered/focused kartico
+window.addEventListener("resize", () => {
+  const active =
+    document.querySelector(".bach-card:hover") ||
+    document.querySelector(".bach-card:focus-within");
+  if (active) clampTooltip(active);
+});

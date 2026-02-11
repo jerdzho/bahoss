@@ -17,22 +17,14 @@ const ESSENCES = [
     `,
     tags: ["notranja napetost", "maskiranje", "mir"],
   },
-  // dodaj ostale...
   {
     slug: "aspen",
     name: "Aspen",
     lead: "test",
     when: "test",
-    goal: "Vtest",
-    body: `
-      <p>Atest</p>
-      <ul>
-        <li>Tiptest težkim pogovorom.</li>
-        <li>Podportest kaj res čutiš.</li>
-      </ul>
-      <p>Dodaj testko več odstavkov).</p>
-    `,
-    tags: ["notranja test", "test", "test"],
+    goal: "test",
+    body: `<p>test</p>`,
+    tags: ["test"],
   },
 ];
 
@@ -50,16 +42,10 @@ document.getElementById("essenceGoal").textContent = item.goal;
 document.getElementById("essenceBody").innerHTML = item.body;
 
 const chips = document.getElementById("essenceChips");
-chips.innerHTML = (item.tags || [])
-  .map((t) => `<span class="chip">${t}</span>`)
-  .join("");
-
-// optional: kasneje zamenjaš z real image <img>
-document.getElementById("essenceImg").setAttribute("data-slug", item.slug);
-
+chips.innerHTML = (item.tags || []).map((t) => `<span class="chip">${t}</span>`).join("");
 
 const BASE = import.meta.env.BASE_URL;
-document.getElementById("essenceImg").style.backgroundImage = `url('${BASE}img/bach/${item.slug}.jpg')`;
-document.getElementById("essenceImg").style.backgroundSize = "cover";
-document.getElementById("essenceImg").style.backgroundPosition = "center";
-
+const img = document.getElementById("essenceImg");
+img.style.backgroundImage = `url('${BASE}img/bach/${item.slug}.jpg')`;
+img.style.backgroundSize = "cover";
+img.style.backgroundPosition = "center";
