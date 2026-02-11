@@ -190,3 +190,25 @@ document.querySelectorAll("form").forEach((f) => {
     }
   });
 });
+
+
+// main.js
+export function initReveal(root = document) {
+  const els = Array.from(root.querySelectorAll('[data-reveal]'));
+
+  // da ne ostanejo hidden, če IO kdaj zataji
+  requestAnimationFrame(() => {
+    els.forEach(el => el.classList.add('is-visible'));
+  });
+
+  const io = new IntersectionObserver(entries => {
+    for (const e of entries) {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target); // animiraj 1x
+      }
+    }
+  }, { threshold: 0.15 });
+
+  els.forEach(el => io.observe(el));
+}
