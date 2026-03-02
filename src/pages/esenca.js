@@ -13,7 +13,7 @@ const ESSENCES = [
         <li>Tipično: humor kot obramba, izogibanje težkim pogovorom.</li>
         <li>Podpora: da lažje poveš, kaj res čutiš.</li>
       </ul>
-      <p>Dodaj tukaj svoj dolg opis (lahko več odstavkov).</p>
+      <p>Dol opis -->.</p>
     `,
     tags: ["notranja napetost", "maskiranje", "mir"],
   },

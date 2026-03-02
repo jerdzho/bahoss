@@ -57,7 +57,7 @@ grid.innerHTML = BACH.map((x) => {
   const imgUrl = `${BASE}img/bach/${slug}.jpg`;
 
   return `
-    <a class="bach-card" href="./esenca.html?e=${slug}" aria-label="${esc(x.name)}">
+    <a class="bach-card" data-reveal href="./esenca.html?e=${slug}" aria-label="${esc(x.name)}">
       <div class="bach-card__inner">
         <div class="bach-card__img" style="background-image:url('${imgUrl}')" aria-hidden="true"></div>
         <div class="bach-card__body">

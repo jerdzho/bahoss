@@ -107,12 +107,9 @@ function updateScrollBar() {
 /**
  * Gentle parallax in hero
  */
-const heroCard = document.getElementById("heroCard");
 const floats = Array.from(document.querySelectorAll(".float"));
 function updateParallax() {
   const y = window.scrollY;
-  if (heroCard) heroCard.style.transform = `translate3d(0, ${Math.min(18, y * 0.03)}px, 0)`;
-
 }
 //window.addEventListener("scroll", updateParallax, { passive: true });
 updateParallax();
@@ -212,3 +209,98 @@ export function initReveal(root = document) {
 
   els.forEach(el => io.observe(el));
 }
+
+
+
+/*FAQ*/
+
+function initFAQ(root = document) {
+  const faqs = Array.from(root.querySelectorAll("[data-faq]"));
+
+  faqs.forEach((faq) => {
+    const items = Array.from(faq.querySelectorAll(".faq__item"));
+
+    // Ensure all closed on load
+    items.forEach((item) => {
+      const panel = item.querySelector(".faq__a");
+      const btn = item.querySelector(".faq__q");
+      if (!panel || !btn) return;
+
+      item.classList.remove("is-open");
+      btn.setAttribute("aria-expanded", "false");
+      panel.style.height = "0px";
+    });
+
+    items.forEach((item) => {
+      const panel = item.querySelector(".faq__a");
+      const btn = item.querySelector(".faq__q");
+      const content = item.querySelector(".faq__content");
+      if (!panel || !btn || !content) return;
+
+      btn.addEventListener("click", () => {
+        const isOpen = item.classList.contains("is-open");
+
+        // close others (accordion)
+        items.forEach((other) => {
+          if (other === item) return;
+          closeItem(other);
+        });
+
+        // toggle current
+        isOpen ? closeItem(item) : openItem(item);
+      });
+
+      function openItem(el) {
+        const p = el.querySelector(".faq__a");
+        const b = el.querySelector(".faq__q");
+        const c = el.querySelector(".faq__content");
+        if (!p || !b || !c) return;
+
+        el.classList.add("is-open");
+        b.setAttribute("aria-expanded", "true");
+
+        // set explicit height for transition
+        const h = c.scrollHeight + 8; // small buffer
+        p.style.height = h + "px";
+
+        // after transition, set to auto via resetting to measured height on resize only
+        // (keep explicit height; stable + simplest)
+      }
+
+      function closeItem(el) {
+        const p = el.querySelector(".faq__a");
+        const b = el.querySelector(".faq__q");
+        if (!p || !b) return;
+
+        el.classList.remove("is-open");
+        b.setAttribute("aria-expanded", "false");
+        p.style.height = "0px";
+      }
+    });
+  });
+
+  // Keep open panel heights correct on resize
+  window.addEventListener("resize", () => {
+    document.querySelectorAll(".faq__item.is-open").forEach((item) => {
+      const panel = item.querySelector(".faq__a");
+      const content = item.querySelector(".faq__content");
+      if (!panel || !content) return;
+      panel.style.height = (content.scrollHeight + 14) + "px";
+    });
+  });
+}
+
+initFAQ();
+
+// make entire faq card clickable
+document.querySelectorAll(".faq__item").forEach((item) => {
+  item.addEventListener("click", (e) => {
+    // če klikneš interaktivni element, ignoriraj
+    if (e.target.closest("a, button, input, textarea, select, label")) return;
+
+    const btn = item.querySelector(".faq__q");
+    if (!btn) return;
+
+    btn.click();
+  });
+});

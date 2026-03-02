@@ -509,6 +509,7 @@ img{ max-width: 100%; display:block; }
   transition: transform .26s var(--ease), box-shadow .26s var(--ease), border-color .26s var(--ease);
   position: relative;
   overflow:hidden;
+
 }
 .service::after{
   content:"";
@@ -523,10 +524,22 @@ img{ max-width: 100%; display:block; }
   pointer-events:none;
 }
 .service:hover{
-  transform: translateY(-6px);
+  transform: translateY(-8px);
   border-color: rgba(47,107,78,.20);
-  box-shadow: 0 18px 44px rgba(25,36,29,.12);
+  box-shadow: 0 18px 44px rgba(25,36,29,.32);
+  
 }
+
+
+.grid-3:hover .service{
+  opacity: .35;
+}
+
+.grid-3 .service:hover{
+  opacity: 1;
+}
+
+
 .service:hover::after{ opacity: .9; }
 
 .service__top{
@@ -692,7 +705,11 @@ img{ max-width: 100%; display:block; }
   border: 1px solid rgba(31,42,34,.10);
 }
 
-/* FAQ */
+
+
+
+/* FAQ: simple CSS-only accordion */
+
 .faq{
   border-radius: var(--radius);
   border: 1px solid rgba(31,42,34,.10);
@@ -700,22 +717,81 @@ img{ max-width: 100%; display:block; }
   box-shadow: var(--shadow);
   padding: 10px;
 }
+
 .faq__item{
   border-radius: 18px;
   border: 1px solid rgba(31,42,34,.08);
-  background: rgba(255,255,255,.65);
-  padding: 10px 12px;
+  background: rgba(255,255,255,.70);
   margin: 10px;
+  overflow: hidden;
+  transition: transform .18s var(--ease), box-shadow .18s var(--ease), border-color .18s var(--ease);
+}
+
+.faq__item:hover{
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-soft);
+  border-color: rgba(47,107,78,.18);
+}
+
+.faq__q{
+  width: 100%;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 14px 14px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;          /* prostor med puščico in tekstom */
+
+  font: inherit;
+  font-weight: 450;
+  text-align: left;
+}
+
+.faq__q:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 6px var(--ring);
+}
+
+/* puščica na levi */
+.faq__chev{
+  width: 14px;
+  height: 14px;
+  color: rgba(31,42,34,.55);
+
+  transform: rotate(-90deg);   /* default: desno */
+  transform-origin: 50% 50%;
   transition: transform .22s var(--ease);
+
+  flex: 0 0 auto;
 }
-.faq__item:hover{ transform: translateY(-2px); }
-.faq summary{
-  cursor:pointer;
-  font-weight: 700;
+.faq__item.is-open .faq__chev{
+  transform: rotate(0deg);     /* open: dol */
 }
+
+
+
+/* animated panel (JS sets height) */
+.faq__a{
+  height: 0;
+  overflow: hidden;
+  transition: height .28s var(--ease);
+}
+
 .faq__content{
-  padding: 10px 0 2px;
+  padding: 0 14px 8px;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity .18s ease, transform .18s ease;
 }
+
+.faq__item.is-open .faq__content{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 
 /* Contact CTA */
 .cta{

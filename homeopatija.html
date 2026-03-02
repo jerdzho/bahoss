@@ -7,7 +7,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/src/style.css" />
   
 
 </head>
@@ -15,7 +14,7 @@
   
   <header class="header">
     <div class="container header__inner">
-      <a class="brand" href="./index.html#storitve">
+      <a class="brand" href="./index.html#top" ...>
         <span class="brand__mark" aria-hidden="true">
           <img class="brand__logo" src="./img/logo.svg" alt="">
         </span>
@@ -36,14 +35,14 @@
           <p class="kicker">Homeopatija</p>
           <h2>Osnove in pristop</h2>
         </div>
-        <p class="section__lead">Tu dodaš svoj tekst in strukturo (sekcije, FAQ, itd.).</p>
+        <p class="section__lead">FAQ, sekcije, nevem še</p>
       </div>
       <div class="page-hero" data-reveal>
         <div class="page-hero__media" aria-label="Prostor za sliko"></div>
         <div class="page-hero__copy">
-          <h3>Kratek uvod (placeholder)</h3>
+          <h3>Kratek uvod</h3>
           <p class="muted">
-            Tukaj bo kratek opis, komu je namenjeno in kaj lahko pričakuješ. Kasneje zamenjaš z real tekstom.
+            Tukaj bo kratek opis, komu je namenjeno in kaj lahko pričakujejo
           </p>
         </div>
       </div>
@@ -75,19 +74,56 @@
   </ol>
 </section>
 
-<section class="content-block" data-reveal id="faq-homeo">
-  <h3>FAQ</h3>
-  <div class="faq">
-    <details class="faq__item">
-      <summary>Koliko časa traja posvet?</summary>
-      <div class="faq__content muted">Placeholder odgovor.</div>
-    </details>
-    <details class="faq__item">
-      <summary>Ali je primerno za vsakogar?</summary>
-      <div class="faq__content muted">Placeholder odgovor.</div>
-    </details>
+<section class="section section--soft section--tight" id="faq">
+  <div class="container">
+    <div class="section__head" data-reveal>
+      <div>
+        <p class="kicker">FAQ</p>
+        <h2>Najpogostejša vprašanja</h2>
+      </div>
+      <p class="section__lead">Klikni vprašanje za odgovor.</p>
+    </div>
+
+    <div class="faq" data-faq>
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false">
+          Kako hitro se dogovoriva za termin?
+          <span class="faq__chev" aria-hidden="true"></span>
+        </button>
+        <div class="faq__a" role="region">
+          <div class="faq__content muted">
+            Običajno v parih dneh. Če je nujno, napiši v kontakt in dodaj “NUJNO”.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false">
+          Ali moram vse vedeti vnaprej?
+          <span class="faq__chev" aria-hidden="true"></span>
+        </button>
+        <div class="faq__a" role="region">
+          <div class="faq__content muted">
+            Ne. Dovolj je, da poveš, kaj doživljaš in kaj želiš. Ostalo sestaviva skupaj.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false">
+          Ali je plan zapleten?
+          <span class="faq__chev" aria-hidden="true"></span>
+        </button>
+        <div class="faq__a" role="region">
+          <div class="faq__content muted">
+            Cilj je minimalen plan, ki ga res narediš. Če je preveč, poenostaviva.
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+
 
 <section class="content-block" data-reveal id="kontakt-homeo">
   <h3>Kontakt</h3>
@@ -101,6 +137,6 @@
     </div>
   </main>
 
-  <script type="module" src="/src/main.js"></script>
+  <script type="module" src="./src/main.js"></script>
 </body>
 </html>
