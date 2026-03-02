@@ -70,6 +70,12 @@ grid.innerHTML = BACH.map((x) => {
 }).join("");
 
 
+// po grid.innerHTML ...
+const newRevealEls = Array.from(grid.querySelectorAll("[data-reveal]"));
+requestAnimationFrame(() => {
+  newRevealEls.forEach(el => el.classList.add("is-visible"));
+});
+
 
 function clampTooltip(card) {
   const desc = card.querySelector(".bach-card__desc");
