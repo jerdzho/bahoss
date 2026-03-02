@@ -1164,7 +1164,7 @@ input:focus, select:focus, textarea:focus{
   box-shadow: var(--shadow);
 
   background-image:
-    url("./img/kakopoteka.jpg"),
+    url("/img/kakopoteka.jpg"),
     radial-gradient(220px 180px at 25% 30%, rgba(215,184,106,.45), transparent 60%),
     radial-gradient(260px 220px at 70% 75%, rgba(47,107,78,.18), transparent 60%),
     linear-gradient(135deg, rgba(255,255,255,.85), rgba(243,245,234,.85));
@@ -1181,7 +1181,7 @@ input:focus, select:focus, textarea:focus{
 }
 /* About photo real image */
 .photo--me{
-  background-image: url("./img/o-meni.jpg");
+  background-image: url("/img/o-meni.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -1201,7 +1201,7 @@ input:focus, select:focus, textarea:focus{
   box-shadow: var(--shadow);
 
   background-image:
-    url("./img/homeopatija.jpg"),
+    url("/img/homeopatija.jpg"),
     radial-gradient(180px 140px at 25% 30%, rgba(215,184,106,.45), transparent 60%),
     radial-gradient(220px 180px at 70% 75%, rgba(47,107,78,.18), transparent 60%),
     linear-gradient(135deg, rgba(255,255,255,.85), rgba(243,245,234,.85));
