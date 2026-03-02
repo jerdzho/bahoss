@@ -1,4 +1,5 @@
 import "../style.css";
+import { initReveal } from "../reveal.js";
 
 const esc = (s) => String(s)
   .replaceAll("&", "&amp;")
@@ -69,12 +70,8 @@ grid.innerHTML = BACH.map((x) => {
   `;
 }).join("");
 
+initReveal(grid);
 
-// po grid.innerHTML ...
-const newRevealEls = Array.from(grid.querySelectorAll("[data-reveal]"));
-requestAnimationFrame(() => {
-  newRevealEls.forEach(el => el.classList.add("is-visible"));
-});
 
 
 function clampTooltip(card) {
